@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>手写jsonp跨域组件</title>
+</head>
+<body>
+<div id="result"></div>
+<script type="text/javascript" src="http.js"></script>
+  <script type="text/javascript">
+  (function(){
+    $jsonp('http://api.douban.com/v2/movie/in_theaters',
+      {count:10,start:5},
+      function(data){
+        document.getElementById('result').innerHTML=JSON.stringify(data);
+    })
+  })()
+  </script>
+</body>
+</html>
